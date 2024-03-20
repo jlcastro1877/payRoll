@@ -30,27 +30,30 @@ const collectEmployees = function() {
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
-  let Sumtotal = 0
+  let SumValues = 0
   let total = 0;
   const numberEmployee = employeesArray.length;
-  console.log("mostra o que tem no employeesarray");
+
   for (let i = 0; i < employeesArray.length; i++) {
-    Sumtotal += employeesArray[i].salary;
+    SumValues += employeesArray[i].salary;
   }
 
  
-total = Sumtotal / numberEmployee;
+total = SumValues / numberEmployee;
 console.log (`The Average employee salary between our ${numberEmployee} employee(s) is ${total.toLocaleString("en-US", {
     style:"currency",
     currency:"USD"
   })}`);
-
-
 }
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
+  let EmployeeSorted = "";
+
+  EmployeeSorted = Math.floor(Math.random() * employeesArray.length);
+  console.log(`Congratulations to ${employeesArray[EmployeeSorted].firstName}, our random drawing winner!`)
+
 }
 
 /*
