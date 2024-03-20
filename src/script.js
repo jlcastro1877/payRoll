@@ -21,9 +21,8 @@ const collectEmployees = function() {
       }
     )
     
-   if(confirm("Do you want to add more employees?") == false) {
-       console.log(Empldata);
-        return Empldata;
+   if(confirm("Do you want to add another employee?") == false) {
+       return Empldata;
     }
   }
 }
@@ -31,9 +30,21 @@ const collectEmployees = function() {
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
-  console.log('The average is:');
-  return 1500
-  
+  let Sumtotal = 0
+  let total = 0;
+  const numberEmployee = employeesArray.length;
+  console.log("mostra o que tem no employeesarray");
+  for (let i = 0; i < employeesArray.length; i++) {
+    Sumtotal += employeesArray[i].salary;
+  }
+
+ 
+total = Sumtotal / numberEmployee;
+console.log (`The Average employee salary between our ${numberEmployee} employee(s) is ${total.toLocaleString("en-US", {
+    style:"currency",
+    currency:"USD"
+  })}`);
+
 
 }
 
